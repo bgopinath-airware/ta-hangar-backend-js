@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(methodOverride("_method"));
 
-mongoose.connect('mongodb://localhost/hangar_db')
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/hangar_db");
 //var connection = mongoose.createConnection('mongodb://localhost/hangar_db');
 //autoIncrement.initialize(connection);
 
