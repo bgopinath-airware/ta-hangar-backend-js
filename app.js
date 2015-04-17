@@ -44,6 +44,9 @@ var	HangarSchema = new Schema({
 var AircraftModel = mongoose.model('Aircraft', AircraftSchema);
 var HangarModel = mongoose.model('Hangar', HangarSchema);
 
+app.get('/', function (req, res) {
+	res.redirect("/api");
+});
 
 app.get('/api', function(req, res) {
 	HangarModel.find(function(err, hangars) {
